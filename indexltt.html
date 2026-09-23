@@ -1,0 +1,2466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="LAUTECH Table Tennis Club — the official digital home of table tennis at Ladoke Akintola University of Technology."
+  >
+
+  <meta name="theme-color" content="#050807">
+
+  <title>LAUTECH Table Tennis Club</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =====================================================
+       ROOT
+    ===================================================== */
+
+    :root {
+      --black: #050807;
+      --black-2: #090d0b;
+      --charcoal: #101613;
+
+      --green-dark: #073d2b;
+      --green: #0b6b4b;
+      --green-light: #18a36f;
+
+      --silver: #c9cfcc;
+      --silver-light: #e8ecea;
+
+      --white: #ffffff;
+
+      --muted: #89958f;
+
+      --line: rgba(255, 255, 255, 0.10);
+
+      --shadow:
+        0 25px 70px rgba(0, 0, 0, 0.30);
+
+      --radius: 24px;
+    }
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+
+    /* =====================================================
+       CONTAINER
+    ===================================================== */
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+    }
+
+
+    /* =====================================================
+       TOP BAR
+    ===================================================== */
+
+    .topbar {
+      background: #020403;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      color: #9da8a3;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+    }
+
+    .topbar-inner {
+      min-height: 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(5, 8, 7, 0.88);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    nav {
+      min-height: 82px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+
+    /* =====================================================
+       BRAND
+    ===================================================== */
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+    }
+
+    .brand-logo {
+      width: 52px;
+      height: 52px;
+
+      background: white;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.12),
+        0 8px 30px rgba(0,0,0,0.30);
+    }
+
+    .brand-logo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+    }
+
+    .brand-name {
+      line-height: 1.05;
+    }
+
+    .brand-name strong {
+      display: block;
+
+      color: white;
+
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-name span {
+      display: block;
+
+      margin-top: 5px;
+
+      color: var(--muted);
+
+      font-size: 0.63rem;
+      font-weight: 500;
+
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    .nav-links {
+      list-style: none;
+
+      display: flex;
+      align-items: center;
+
+      gap: 28px;
+
+      font-size: 0.84rem;
+      font-weight: 600;
+
+      color: #cbd2cf;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      transition: color 0.25s ease;
+    }
+
+    .nav-links a:not(.nav-button)::after {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -8px;
+
+      width: 0;
+      height: 2px;
+
+      background: var(--green-light);
+
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-button {
+      padding: 11px 18px;
+
+      border-radius: 999px;
+
+      background: var(--green);
+
+      color: white !important;
+
+      box-shadow:
+        0 8px 25px rgba(11,107,75,0.30);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .nav-button:hover {
+      background: var(--green-light);
+
+      transform: translateY(-2px);
+    }
+
+    .menu-button {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border: 1px solid rgba(255,255,255,0.12);
+
+      border-radius: 12px;
+
+      background: rgba(255,255,255,0.05);
+
+      color: white;
+
+      font-size: 1.25rem;
+
+      cursor: pointer;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+      min-height: 720px;
+
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 78% 28%,
+          rgba(24,163,111,0.22),
+          transparent 24%
+        ),
+
+        radial-gradient(
+          circle at 20% 90%,
+          rgba(11,107,75,0.17),
+          transparent 28%
+        ),
+
+        linear-gradient(
+          135deg,
+          #020403 0%,
+          #06100c 48%,
+          #0a2118 100%
+        );
+    }
+
+
+    /* Premium grid */
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,0.025) 1px,
+          transparent 1px
+        );
+
+      background-size: 70px 70px;
+
+      mask-image: linear-gradient(
+        to right,
+        black,
+        transparent 80%
+      );
+
+      pointer-events: none;
+    }
+
+
+    /* Green glow */
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 550px;
+      height: 550px;
+
+      right: -160px;
+      bottom: -250px;
+
+      background: rgba(24,163,111,0.12);
+
+      filter: blur(100px);
+
+      border-radius: 50%;
+    }
+
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 780px;
+
+      padding: 100px 0;
+    }
+
+
+    /* Hero logo */
+
+    .hero-logo {
+      width: 105px;
+      height: 105px;
+
+      margin-bottom: 30px;
+
+      background: white;
+
+      border-radius: 50%;
+
+      padding: 7px;
+
+      box-shadow:
+        0 20px 60px rgba(0,0,0,0.35),
+        0 0 0 1px rgba(255,255,255,0.12);
+    }
+
+    .hero-logo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      border-radius: 50%;
+    }
+
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 20px;
+
+      color: var(--green-light);
+
+      font-size: 0.72rem;
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+
+      width: 32px;
+      height: 2px;
+
+      background: var(--green-light);
+    }
+
+
+    h1,
+    h2,
+    h3 {
+      font-family: "Space Grotesk", sans-serif;
+
+      line-height: 1.05;
+    }
+
+
+    h1 {
+      max-width: 850px;
+
+      font-size: clamp(
+        3.5rem,
+        8vw,
+        7.5rem
+      );
+
+      letter-spacing: -0.065em;
+
+      margin-bottom: 25px;
+    }
+
+
+    .hero-description {
+      max-width: 650px;
+
+      color: #c3ceca;
+
+      font-size: clamp(
+        1rem,
+        2vw,
+        1.18rem
+      );
+
+      line-height: 1.8;
+
+      margin-bottom: 35px;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .hero-buttons {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 13px;
+    }
+
+    .button {
+      min-height: 50px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 0 23px;
+
+      border-radius: 999px;
+
+      font-size: 0.85rem;
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--green-light);
+
+      color: white;
+
+      box-shadow:
+        0 12px 35px rgba(24,163,111,0.22);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-3px);
+
+      background: #21b77f;
+    }
+
+    .button-outline {
+      color: white;
+
+      border: 1px solid rgba(255,255,255,0.18);
+
+      background: rgba(255,255,255,0.04);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .button-outline:hover {
+      transform: translateY(-3px);
+
+      background: rgba(255,255,255,0.08);
+
+      border-color: rgba(255,255,255,0.3);
+    }
+
+
+    /* =====================================================
+       STATS
+    ===================================================== */
+
+    .stats {
+      margin-top: -55px;
+
+      position: relative;
+      z-index: 5;
+    }
+
+    .stats-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      overflow: hidden;
+
+      border:
+
+        1px solid rgba(255,255,255,0.10);
+
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(22,31,27,0.97),
+          rgba(9,14,12,0.97)
+        );
+
+      box-shadow: var(--shadow);
+
+      backdrop-filter: blur(20px);
+    }
+
+    .stat {
+      padding: 30px 20px;
+
+      text-align: center;
+
+      border-right:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat strong {
+      display: block;
+
+      color: white;
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 1.65rem;
+    }
+
+    .stat span {
+      display: block;
+
+      margin-top: 5px;
+
+      color: var(--muted);
+
+      font-size: 0.72rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.08em;
+    }
+
+
+    /* =====================================================
+       GENERAL SECTIONS
+    ===================================================== */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-dark {
+      background:
+        radial-gradient(
+          circle at 80% 10%,
+          rgba(11,107,75,0.12),
+          transparent 25%
+        ),
+        var(--black);
+    }
+
+    .section-light {
+      color: var(--ink);
+
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(11,107,75,0.07),
+          transparent 25%
+        ),
+        #f2f5f3;
+    }
+
+    .section-head {
+      max-width: 720px;
+
+      margin-bottom: 50px;
+    }
+
+    .section-head .eyebrow {
+      color: var(--green-light);
+    }
+
+    .section-head h2 {
+      font-size: clamp(
+        2.4rem,
+        5vw,
+        4.2rem
+      );
+
+      letter-spacing: -0.045em;
+
+      margin-bottom: 17px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+
+      font-size: 0.98rem;
+    }
+
+    .section-dark .section-head p {
+      color: #9da9a4;
+    }
+
+
+    /* =====================================================
+       FEATURE CARDS
+    ===================================================== */
+
+    .feature-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .feature-card {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 32px;
+
+      border-radius: var(--radius);
+
+      border: 1px solid rgba(255,255,255,0.08);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20,29,25,0.95),
+          rgba(8,12,10,0.98)
+        );
+
+      box-shadow:
+        0 10px 35px rgba(0,0,0,0.16);
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .section-light .feature-card {
+      border-color: #dce3df;
+
+      background:
+        linear-gradient(
+          145deg,
+          #ffffff,
+          #f5f8f6
+        );
+    }
+
+    .feature-card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 150px;
+      height: 150px;
+
+      top: -90px;
+      right: -90px;
+
+      border-radius: 50%;
+
+      background: rgba(24,163,111,0.12);
+
+      filter: blur(10px);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(24,163,111,0.38);
+
+      box-shadow:
+        0 25px 60px rgba(0,0,0,0.25);
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 25px;
+
+      border-radius: 16px;
+
+      background:
+        rgba(24,163,111,0.12);
+
+      border:
+        1px solid rgba(24,163,111,0.22);
+
+      color: var(--green-light);
+
+      font-size: 1.35rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.35rem;
+
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+
+      font-size: 0.9rem;
+    }
+
+
+    /* =====================================================
+       FIXTURE
+    ===================================================== */
+
+    .fixture-section {
+      background:
+        radial-gradient(
+          circle at 85% 50%,
+          rgba(24,163,111,0.13),
+          transparent 30%
+        ),
+        #07100c;
+    }
+
+    .fixture-layout {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 60px;
+
+      align-items: center;
+    }
+
+    .fixture-card {
+      padding: 35px;
+
+      border-radius: 26px;
+
+      border:
+        1px solid rgba(255,255,255,0.10);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(27,38,33,0.95),
+          rgba(9,14,12,0.98)
+        );
+
+      box-shadow: var(--shadow);
+    }
+
+    .fixture-top {
+      display: flex;
+
+      justify-content: space-between;
+
+      color: #899690;
+
+      font-size: 0.68rem;
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.12em;
+
+      padding-bottom: 25px;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.08);
+    }
+
+    .teams {
+      display: grid;
+
+      grid-template-columns: 1fr auto 1fr;
+
+      align-items: center;
+
+      gap: 20px;
+
+      text-align: center;
+
+      padding: 35px 0;
+    }
+
+    .team-logo {
+      width: 75px;
+      height: 75px;
+
+      margin: 0 auto 13px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      padding: 5px;
+    }
+
+    .team-logo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: contain;
+
+      border-radius: 50%;
+    }
+
+    .team-placeholder {
+      width: 75px;
+      height: 75px;
+
+      margin: 0 auto 13px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #18221e;
+
+      border: 1px solid rgba(255,255,255,0.10);
+
+      color: var(--green-light);
+
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+    }
+
+    .team-name {
+      font-family: "Space Grotesk", sans-serif;
+
+      font-weight: 700;
+
+      font-size: 0.9rem;
+    }
+
+    .versus {
+      color: var(--green-light);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 1rem;
+
+      font-weight: 700;
+    }
+
+    .fixture-bottom {
+      padding-top: 20px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.08);
+
+      text-align: center;
+
+      color: #899690;
+
+      font-size: 0.78rem;
+    }
+
+
+    /* =====================================================
+       PLAYERS
+    ===================================================== */
+
+    .player-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .player-card {
+      min-height: 280px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+
+      padding: 25px;
+
+      border-radius: var(--radius);
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          145deg,
+          #16221d,
+          #080d0b
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      position: relative;
+    }
+
+    .player-number {
+      position: absolute;
+
+      top: 18px;
+      right: 22px;
+
+      color: rgba(255,255,255,0.12);
+
+      font-family: "Space Grotesk", sans-serif;
+
+      font-size: 4rem;
+
+      font-weight: 700;
+    }
+
+    .player-silhouette {
+      position: absolute;
+
+      left: 50%;
+      top: 40%;
+
+      transform: translate(-50%, -50%);
+
+      font-size: 6rem;
+
+      opacity: 0.12;
+    }
+
+    .player-card h3 {
+      font-size: 1.25rem;
+    }
+
+    .player-card span {
+      color: var(--green-light);
+
+      font-size: 0.7rem;
+
+      font-weight: 700;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.1em;
+    }
+
+
+    /* =====================================================
+       NEWS
+    ===================================================== */
+
+    .news-grid {
+      display: grid;
+
+      grid-template-columns: 1.25fr 0.75fr;
+
+      gap: 20px;
+    }
+
+    .news-card {
+      overflow: hidden;
+
+      border-radius: var(--radius);
+
+      border:
+        1px solid rgba(255,255,255,0.08);
+
+      background:
+        linear-gradient(
+          145deg,
+          #151d19,
+          #090d0b
+        );
+    }
+
+    .news-image {
+      min-height: 260px;
+
+      display: grid;
+
+      place-items: center;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(24,163,111,0.22),
+          transparent 45%
+        ),
+        #07100c;
+
+      font-size: 5rem;
+    }
+
+    .news-content {
+      padding: 27px;
+    }
+
+    .news-tag {
+      color: var(--green-light);
+
+      font-size: 0.67rem;
+      font-weight: 800;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    .news-content h3 {
+      font-size: 1.4rem;
+
+      margin: 9px 0;
+    }
+
+    .news-content p {
+      color: var(--muted);
+
+      font-size: 0.88rem;
+    }
+
+
+    /* =====================================================
+       CTA
+    ===================================================== */
+
+    .cta {
+      padding-top: 25px;
+
+      background: var(--black);
+    }
+
+    .cta-box {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 70px;
+
+      border-radius: 30px;
+
+      background:
+        radial-gradient(
+          circle at 85% 20%,
+          rgba(24,163,111,0.25),
+          transparent 28%
+        ),
+        linear-gradient(
+          120deg,
+          #09271c,
+          #0d6245
+        );
+
+      border:
+        1px solid rgba(255,255,255,0.10);
+
+      box-shadow: var(--shadow);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 35px;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(
+        2.2rem,
+        4vw,
+        3.6rem
+      );
+
+      letter-spacing: -0.05em;
+
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      max-width: 600px;
+
+      color: #c9ddd4;
+
+      font-size: 0.94rem;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+      padding: 65px 0 25px;
+
+      background: #020403;
+
+      border-top:
+        1px solid rgba(255,255,255,0.07);
+    }
+
+    .footer-grid {
+      display: grid;
+
+      grid-template-columns: 1.5fr 1fr 1fr;
+
+      gap: 50px;
+
+      padding-bottom: 45px;
+    }
+
+    footer h3 {
+      color: white;
+
+      font-size: 0.95rem;
+
+      margin-bottom: 17px;
+    }
+
+    footer p,
+    footer a {
+      color: #84918b;
+
+      font-size: 0.82rem;
+    }
+
+    .footer-links {
+      display: grid;
+
+      gap: 9px;
+    }
+
+    .footer-links a:hover {
+      color: var(--green-light);
+    }
+
+    .copyright {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding-top: 23px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.07);
+
+      color: #59645f;
+
+      font-size: 0.7rem;
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 850px) {
+
+      .topbar {
+        display: none;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        left: 20px;
+        right: 20px;
+        top: 75px;
+
+        padding: 18px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 5px;
+
+        background:
+          rgba(8,12,10,0.98);
+
+        border:
+          1px solid rgba(255,255,255,0.10);
+
+        border-radius: 18px;
+
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+
+        padding: 11px;
+      }
+
+      .nav-button {
+        text-align: center;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom:
+          1px solid rgba(255,255,255,0.08);
+      }
+
+      .feature-grid,
+      .player-grid,
+      .fixture-layout,
+      .news-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fixture-layout {
+        gap: 35px;
+      }
+
+      .cta-box {
+        padding: 45px 30px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+    }
+
+
+    @media (max-width: 520px) {
+
+      .container {
+        width: calc(100% - 28px);
+      }
+
+      nav {
+        min-height: 72px;
+      }
+
+      .brand-name strong {
+        font-size: 0.84rem;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      .hero-content {
+        padding: 80px 0;
+      }
+
+      .hero-logo {
+        width: 85px;
+        height: 85px;
+      }
+
+      h1 {
+        font-size: 3.3rem;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .stats {
+        margin-top: -35px;
+      }
+
+      .stat {
+        padding: 21px 10px;
+      }
+
+      .stat strong {
+        font-size: 1.35rem;
+      }
+
+      .feature-card,
+      .fixture-card {
+        padding: 25px;
+      }
+
+      .teams {
+        gap: 10px;
+      }
+
+      .cta-box {
+        border-radius: 22px;
+      }
+
+      .copyright {
+        flex-direction: column;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       TOP BAR
+  ===================================================== -->
+
+  <div class="topbar">
+
+    <div class="container topbar-inner">
+
+      <span>
+        Ladoke Akintola University of Technology
+      </span>
+
+      <span>
+        LAUTECH Table Tennis Club
+      </span>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       HEADER
+  ===================================================== -->
+
+  <header>
+
+    <nav class="container">
+
+      <a href="#" class="brand">
+
+        <div class="brand-logo">
+          <img
+            src="lautech-table-tennis-logo.png"
+            alt="LAUTECH Table Tennis Club Logo"
+          >
+        </div>
+
+        <div class="brand-name">
+
+          <strong>
+            LAUTECH TABLE TENNIS
+          </strong>
+
+          <span>
+            Sports Club
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation"
+      >
+        ☰
+      </button>
+
+
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="#about">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#fixtures">
+            Fixtures
+          </a>
+        </li>
+
+        <li>
+          <a href="#results">
+            Results
+          </a>
+        </li>
+
+        <li>
+          <a href="#players">
+            Players
+          </a>
+        </li>
+
+        <li>
+          <a href="#news">
+            News
+          </a>
+        </li>
+
+        <li>
+          <a href="#join" class="nav-button">
+            Join the Club
+          </a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="hero">
+
+      <div class="container hero-content">
+
+
+        <div class="hero-logo">
+
+          <img
+            src="lautech-table-tennis-logo.png"
+            alt="LAUTECH Table Tennis"
+          >
+
+        </div>
+
+
+        <div class="eyebrow">
+          LAUTECH SPORTS
+        </div>
+
+
+        <h1>
+          Fast hands.
+          <br>
+          Sharp minds.
+        </h1>
+
+
+        <p class="hero-description">
+
+          Welcome to the official LAUTECH Table Tennis Club —
+          where students train, compete, develop their game
+          and represent the university with pride.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a
+            href="#fixtures"
+            class="button button-primary"
+          >
+            View Fixtures
+          </a>
+
+
+          <a
+            href="#join"
+            class="button button-outline"
+          >
+            Join the Club
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         STATS
+    ==================================================== -->
+
+    <section class="stats">
+
+      <div class="container stats-grid">
+
+
+        <div class="stat">
+
+          <strong>
+            01
+          </strong>
+
+          <span>
+            University Club
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <strong>
+            2026
+          </strong>
+
+          <span>
+            Current Season
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <strong>
+            5+
+          </strong>
+
+          <span>
+            Training Days
+          </span>
+
+        </div>
+
+
+        <div class="stat">
+
+          <strong>
+            🏓
+          </strong>
+
+          <span>
+            Table Tennis
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         ABOUT
+    ==================================================== -->
+
+    <section
+      class="section-dark"
+      id="about"
+    >
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+          <div class="eyebrow">
+            THE CLUB
+          </div>
+
+          <h2>
+            More than a game.
+          </h2>
+
+          <p>
+
+            The LAUTECH Table Tennis Club provides
+            a competitive and welcoming environment
+            for students who want to learn, train,
+            compete and grow.
+
+          </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              ⚡
+            </div>
+
+            <h3>
+              Train
+            </h3>
+
+            <p>
+
+              Build speed, footwork, consistency,
+              technique and match awareness through
+              structured practice.
+
+            </p>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              🏆
+            </div>
+
+            <h3>
+              Compete
+            </h3>
+
+            <p>
+
+              Follow fixtures, tournaments and
+              competitive opportunities representing
+              LAUTECH.
+
+            </p>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              👥
+            </div>
+
+            <h3>
+              Belong
+            </h3>
+
+            <p>
+
+              Connect with fellow students who share
+              a passion for table tennis and university
+              sport.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FIXTURES
+    ==================================================== -->
+
+    <section
+      class="fixture-section"
+      id="fixtures"
+    >
+
+      <div class="container fixture-layout">
+
+
+        <div>
+
+          <div class="section-head">
+
+            <div class="eyebrow">
+              NEXT MATCH
+            </div>
+
+            <h2>
+              Competition starts at the table.
+            </h2>
+
+            <p>
+
+              Follow upcoming LAUTECH fixtures,
+              tournament rounds, venues and
+              match times right here.
+
+            </p>
+
+          </div>
+
+
+          <a
+            href="#results"
+            class="button button-primary"
+          >
+            View Results
+          </a>
+
+        </div>
+
+
+
+        <div class="fixture-card">
+
+
+          <div class="fixture-top">
+
+            <span>
+              Upcoming Fixture
+            </span>
+
+            <span>
+              Season 2026
+            </span>
+
+          </div>
+
+
+          <div class="teams">
+
+
+            <div>
+
+              <div class="team-logo">
+
+                <img
+                  src="lautech-table-tennis-logo.png"
+                  alt="LAUTECH"
+                >
+
+              </div>
+
+              <div class="team-name">
+                LAUTECH
+              </div>
+
+            </div>
+
+
+            <div class="versus">
+              VS
+            </div>
+
+
+            <div>
+
+              <div class="team-placeholder">
+                OPP
+              </div>
+
+              <div class="team-name">
+                Opponent TBA
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="fixture-bottom">
+
+            Date & Time TBA
+            <br>
+            Venue TBA
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         RESULTS
+    ==================================================== -->
+
+    <section
+      class="section-light"
+      id="results"
+    >
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+          <div class="eyebrow">
+            RESULTS
+          </div>
+
+          <h2>
+            Results & achievements.
+          </h2>
+
+          <p>
+
+            Keep track of LAUTECH's match results,
+            tournament performances and club
+            achievements.
+
+          </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              📊
+            </div>
+
+            <h3>
+              Match Results
+            </h3>
+
+            <p>
+
+              Record singles, doubles and
+              team-match results throughout
+              the season.
+
+            </p>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              🥇
+            </div>
+
+            <h3>
+              Tournaments
+            </h3>
+
+            <p>
+
+              Showcase LAUTECH performances
+              at university and other
+              competitions.
+
+            </p>
+
+          </article>
+
+
+          <article class="feature-card">
+
+            <div class="feature-icon">
+              📈
+            </div>
+
+            <h3>
+              Player Stats
+            </h3>
+
+            <p>
+
+              Track wins, losses, points,
+              appearances and other
+              statistics.
+
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         PLAYERS
+    ==================================================== -->
+
+    <section
+      class="section-dark"
+      id="players"
+    >
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+          <div class="eyebrow">
+            THE SQUAD
+          </div>
+
+          <h2>
+            Meet the players.
+          </h2>
+
+          <p>
+
+            Player profiles can be added here with
+            photos, departments, rankings,
+            playing styles and statistics.
+
+          </p>
+
+        </div>
+
+
+        <div class="player-grid">
+
+
+          <article class="player-card">
+
+            <div class="player-number">
+              01
+            </div>
+
+            <div class="player-silhouette">
+              🏓
+            </div>
+
+            <span>
+              Men's Team
+            </span>
+
+            <h3>
+              Player Profile
+            </h3>
+
+          </article>
+
+
+          <article class="player-card">
+
+            <div class="player-number">
+              02
+            </div>
+
+            <div class="player-silhouette">
+              🏓
+            </div>
+
+            <span>
+              Women's Team
+            </span>
+
+            <h3>
+              Player Profile
+            </h3>
+
+          </article>
+
+
+          <article class="player-card">
+
+            <div class="player-number">
+              03
+            </div>
+
+            <div class="player-silhouette">
+              🤝
+            </div>
+
+            <span>
+              Doubles
+            </span>
+
+            <h3>
+              Player Profile
+            </h3>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         NEWS
+    ==================================================== -->
+
+    <section
+      class="section-dark"
+      id="news"
+    >
+
+      <div class="container">
+
+
+        <div class="section-head">
+
+          <div class="eyebrow">
+            CLUB NEWS
+          </div>
+
+          <h2>
+            What's happening?
+          </h2>
+
+          <p>
+
+            Match reports, announcements,
+            training updates and club stories.
+
+          </p>
+
+        </div>
+
+
+        <div class="news-grid">
+
+
+          <article class="news-card">
+
+            <div class="news-image">
+              🏓
+            </div>
+
+            <div class="news-content">
+
+              <span class="news-tag">
+                Announcement
+              </span>
+
+              <h3>
+                Welcome to LAUTECH Table Tennis
+              </h3>
+
+              <p>
+
+                Your official digital home for
+                fixtures, results, players,
+                tournaments and club updates.
+
+              </p>
+
+            </div>
+
+          </article>
+
+
+
+          <article class="news-card">
+
+            <div class="news-content">
+
+              <span class="news-tag">
+                Training
+              </span>
+
+              <h3>
+                Training Schedule
+              </h3>
+
+              <p>
+
+                Official training days,
+                times and venue information
+                can be displayed here.
+
+              </p>
+
+              <br>
+
+              <a
+                href="#join"
+                class="button button-primary"
+              >
+                Training Info
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         JOIN
+    ==================================================== -->
+
+    <section
+      class="cta"
+      id="join"
+    >
+
+      <div class="container">
+
+        <div class="cta-box">
+
+
+          <div>
+
+            <div class="eyebrow">
+              JOIN THE CLUB
+            </div>
+
+            <h2>
+              Ready to play?
+            </h2>
+
+            <p>
+
+              Interested LAUTECH students can find
+              information about joining the club,
+              attending training and contacting
+              the team.
+
+            </p>
+
+          </div>
+
+
+          <a
+            href="mailto:tabletennis@lautech.edu.ng"
+            class="button button-primary"
+          >
+            Contact the Club
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ===================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+
+      <div class="footer-grid">
+
+
+        <div>
+
+          <div class="brand">
+
+            <div class="brand-logo">
+
+              <img
+                src="lautech-table-tennis-logo.png"
+                alt="LAUTECH Table Tennis Club"
+              >
+
+            </div>
+
+            <div class="brand-name">
+
+              <strong>
+                LAUTECH TABLE TENNIS
+              </strong>
+
+              <span>
+                Sports Club
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <br>
+
+
+          <p>
+
+            The digital home of table tennis
+            at Ladoke Akintola University
+            of Technology.
+
+          </p>
+
+        </div>
+
+
+
+        <div>
+
+          <h3>
+            Explore
+          </h3>
+
+          <div class="footer-links">
+
+            <a href="#about">
+              About
+            </a>
+
+            <a href="#fixtures">
+              Fixtures
+            </a>
+
+            <a href="#results">
+              Results
+            </a>
+
+            <a href="#players">
+              Players
+            </a>
+
+          </div>
+
+        </div>
+
+
+
+        <div>
+
+          <h3>
+            Club
+          </h3>
+
+          <div class="footer-links">
+
+            <a href="#news">
+              News
+            </a>
+
+            <a href="#join">
+              Join the Club
+            </a>
+
+            <a href="mailto:tabletennis@lautech.edu.ng">
+              Contact
+            </a>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="copyright">
+
+        <span>
+          © 2026 LAUTECH Table Tennis Club.
+        </span>
+
+        <span>
+          Built for the game. Built for LAUTECH.
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ===================================================== -->
+
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuButton.addEventListener(
+      "click",
+      function () {
+
+        navLinks.classList.toggle("active");
+
+        if (
+          navLinks.classList.contains("active")
+        ) {
+
+          menuButton.textContent = "×";
+
+        } else {
+
+          menuButton.textContent = "☰";
+
+        }
+
+      }
+    );
+
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function (link) {
+
+        link.addEventListener(
+          "click",
+          function () {
+
+            navLinks.classList.remove("active");
+
+            menuButton.textContent = "☰";
+
+          }
+        );
+
+      });
+
+  </script>
+
+
+</body>
+</html>

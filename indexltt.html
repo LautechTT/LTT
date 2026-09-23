@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+  name="description"
+  content="LAUTECH Smashers — Table Tennis at LAUTECH, Ogbomoso, Oyo State, Nigeria."
+>
+
+<meta name="theme-color" content="#050505">
+
+<title>LAUTECH Smashers | Table Tennis</title>
+
+<link
+  rel="icon"
+  type="image/png"
+  href="assets/images/lautech-table-tennis-logo.png"
+>
+
+<!-- ========================================================= -->
+<!-- GOOGLE FONTS — SAME DESIGN FAMILY AS IRON DEN -->
+<!-- ========================================================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+
+<style>
+
+/* ========================================================= */
+/* ROOT */
+/* ========================================================= */
+
+:root{
+  --red:#dc2626;
+  --black:#050505;
+  --dark:#090909;
+  --border:#292929;
+  --muted:#a3a3a3;
+  --light:#d4d4d4;
+}
+
+
+/* ========================================================= */
+/* BASE */
+/* ========================================================= */
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
+
+body{
+  margin:0;
+  font-family:Inter,sans-serif;
+  background:#050505;
+  color:white;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+.display{
+  font-family:'Space Grotesk',sans-serif;
+}
+
+.black-italic{
+  font-weight:900;
+  font-style:italic;
+  text-transform:uppercase;
+  letter-spacing:-0.055em;
+}
+
+.red{
+  color:var(--red);
+}
+
+
+/* ========================================================= */
+/* HERO */
+/* ========================================================= */
+
+.hero{
+
+  background-image:
+
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.94),
+      rgba(0,0,0,.70) 50%,
+      rgba(0,0,0,.42)
+    ),
+
+    url('assets/images/lautech-smashers-team.jpg');
+
+  background-size:cover;
+  background-position:center;
+
+}
+
+
+/* ========================================================= */
+/* IMAGE SECTIONS */
+/* ========================================================= */
+
+.section-image{
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+}
+
+.identity-bg{
+
+  background-image:
+
+    linear-gradient(
+      rgba(0,0,0,.82),
+      rgba(0,0,0,.95)
+    ),
+
+    url('assets/images/lautech-smashers-team.jpg');
+
+}
+
+
+/* ========================================================= */
+/* GLASS */
+/* ========================================================= */
+
+.glass{
+
+  background:rgba(0,0,0,.65);
+
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+
+}
+
+
+/* ========================================================= */
+/* CARDS */
+/* ========================================================= */
+
+.card{
+
+  background:rgba(8,8,8,.90);
+
+  border:1px solid #292929;
+
+  transition:.3s ease;
+
+}
+
+.card:hover{
+
+  transform:translateY(-5px);
+
+  border-color:var(--red);
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+
+}
+
+
+/* ========================================================= */
+/* NAVIGATION */
+/* ========================================================= */
+
+.nav-link{
+
+  transition:.3s ease;
+
+}
+
+.nav-link:hover{
+
+  color:var(--red);
+
+}
+
+
+/* ========================================================= */
+/* BUTTONS */
+/* ========================================================= */
+
+.red-button{
+
+  background:#dc2626;
+
+  transition:.3s ease;
+
+}
+
+.red-button:hover{
+
+  background:white;
+
+  color:black;
+
+}
+
+
+.outline-button{
+
+  border:2px solid white;
+
+  transition:.3s ease;
+
+}
+
+.outline-button:hover{
+
+  background:white;
+
+  color:black;
+
+}
+
+
+/* ========================================================= */
+/* EXPLORE CARDS */
+/* ========================================================= */
+
+.explore-card{
+
+  background:#090909;
+
+  border:1px solid #262626;
+
+  transition:.3s ease;
+
+  min-height:250px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+}
+
+.explore-card:hover{
+
+  transform:translateY(-5px);
+
+  border-color:#dc2626;
+
+}
+
+.explore-card-number{
+
+  color:#525252;
+
+  font-size:.75rem;
+
+  font-weight:900;
+
+  letter-spacing:.15em;
+
+}
+
+
+/* ========================================================= */
+/* RED LINE */
+/* ========================================================= */
+
+.red-line{
+
+  width:70px;
+
+  height:4px;
+
+  background:#dc2626;
+
+}
+
+
+/* ========================================================= */
+/* REVEAL ANIMATION */
+/* ========================================================= */
+
+.reveal{
+
+  opacity:0;
+
+  transform:translateY(25px);
+
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+
+}
+
+.reveal.show{
+
+  opacity:1;
+
+  transform:none;
+
+}
+
+
+/* ========================================================= */
+/* MOBILE MENU */
+/* ========================================================= */
+
+.mobile-menu{
+
+  display:none;
+
+}
+
+.mobile-menu.open{
+
+  display:block;
+
+}
+
+
+/* ========================================================= */
+/* DESKTOP PARALLAX */
+/* ========================================================= */
+
+@media(min-width:768px){
+
+  .hero,
+  .identity-bg{
+
+    background-attachment:fixed;
+
+  }
+
+}
+
+
+/* ========================================================= */
+/* MOBILE */
+/* ========================================================= */
+
+@media(max-width:767px){
+
+  .hero{
+
+    background-position:center;
+
+  }
+
+  .black-italic{
+
+    letter-spacing:-0.04em;
+
+  }
+
+}
+
+
+/* ========================================================= */
+/* REDUCED MOTION */
+/* ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  html{
+
+    scroll-behavior:auto;
+
+  }
+
+  *,
+  *::before,
+  *::after{
+
+    animation:none !important;
+
+    transition:none !important;
+
+  }
+
+  .reveal{
+
+    opacity:1;
+
+    transform:none;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================================= -->
+<!-- NAVIGATION -->
+<!-- ========================================================= -->
+
+<nav
+  class="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur border-b border-neutral-800"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+  >
+
+
+    <!-- LOGO -->
+
+    <a
+      href="index.html"
+      aria-label="LAUTECH Smashers home"
+    >
+
+      <img
+        src="assets/images/lautech-table-tennis-logo.png"
+        alt="LAUTECH Smashers logo"
+        class="h-14 w-auto max-w-[190px] object-contain"
+      >
+
+    </a>
+
+
+    <!-- DESKTOP NAV -->
+
+    <div
+      class="hidden md:flex items-center gap-6 text-xs font-black uppercase tracking-widest"
+    >
+
+      <a
+        href="about.html"
+        class="nav-link"
+      >
+        About
+      </a>
+
+      <a
+        href="players.html"
+        class="nav-link"
+      >
+        Players
+      </a>
+
+      <a
+        href="fixtures.html"
+        class="nav-link"
+      >
+        Fixtures
+      </a>
+
+      <a
+        href="results.html"
+        class="nav-link"
+      >
+        Results
+      </a>
+
+      <a
+        href="tournaments.html"
+        class="nav-link"
+      >
+        Tournaments
+      </a>
+
+      <a
+        href="training.html"
+        class="nav-link"
+      >
+        Training
+      </a>
+
+      <a
+        href="contact.html"
+        class="red-button px-5 py-3"
+      >
+        Contact
+      </a>
+
+    </div>
+
+
+    <!-- MOBILE BUTTON -->
+
+    <button
+      id="menuButton"
+      onclick="toggleMobileMenu()"
+      class="md:hidden p-2"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+    >
+
+      <svg
+        class="w-7 h-7"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+
+        <path
+          stroke-width="2"
+          stroke-linecap="round"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+
+      </svg>
+
+    </button>
+
+  </div>
+
+
+  <!-- MOBILE MENU -->
+
+  <div
+    id="mobileMenu"
+    class="mobile-menu md:hidden bg-black border-t border-neutral-800 px-5 pb-6"
+  >
+
+    <div
+      class="flex flex-col gap-5 pt-5 text-sm font-black uppercase tracking-widest"
+    >
+
+      <a href="about.html">
+        About
+      </a>
+
+      <a href="players.html">
+        Players
+      </a>
+
+      <a href="fixtures.html">
+        Fixtures
+      </a>
+
+      <a href="results.html">
+        Results
+      </a>
+
+      <a href="tournaments.html">
+        Tournaments
+      </a>
+
+      <a href="training.html">
+        Training
+      </a>
+
+      <a href="news.html">
+        News
+      </a>
+
+      <a href="gallery.html">
+        Gallery
+      </a>
+
+      <a
+        href="contact.html"
+        class="red-button px-5 py-3 text-center"
+      >
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+
+<!-- ========================================================= -->
+<!-- HERO -->
+<!-- ========================================================= -->
+
+<header
+  class="hero min-h-screen flex items-center pt-20 relative overflow-hidden"
+>
+
+
+  <!-- DECORATIVE GLOW -->
+
+  <div
+    class="absolute inset-0 pointer-events-none"
+  >
+
+    <div
+      class="absolute top-1/4 left-0 w-72 h-72 bg-red-600/10 rounded-full blur-3xl"
+    ></div>
+
+    <div
+      class="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"
+    ></div>
+
+  </div>
+
+
+  <div
+    class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-24"
+  >
+
+    <div
+      class="max-w-4xl reveal"
+    >
+
+
+      <!-- LABEL -->
+
+      <div
+        class="inline-block bg-red-600 px-4 py-2 mb-7 text-xs font-black uppercase tracking-widest"
+      >
+
+        LAUTECH TABLE TENNIS
+
+      </div>
+
+
+      <!-- MAIN TITLE -->
+
+      <h1
+        class="text-6xl sm:text-7xl md:text-8xl black-italic leading-[.86] mb-8"
+      >
+
+        Built
+
+        <br>
+
+        <span class="text-red-600">
+          For The
+        </span>
+
+        <br>
+
+        Game.
+
+      </h1>
+
+
+      <!-- DESCRIPTION -->
+
+      <p
+        class="text-lg sm:text-xl text-neutral-300 max-w-2xl leading-relaxed mb-10"
+      >
+
+        Welcome to LAUTECH Smashers — the table tennis team
+        representing the Ladoke Akintola University of Technology
+        in Ogbomoso, Oyo State.
+
+      </p>
+
+
+      <!-- BUTTONS -->
+
+      <div
+        class="flex flex-wrap gap-4"
+      >
+
+        <a
+          href="about.html"
+          class="red-button px-7 py-4 font-black uppercase tracking-widest"
+        >
+
+          Meet The Team
+
+        </a>
+
+
+        <a
+          href="contact.html"
+          class="outline-button px-7 py-4 font-black uppercase tracking-widest"
+        >
+
+          Contact Us
+
+        </a>
+
+      </div>
+
+
+      <!-- HERO INFORMATION -->
+
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 gap-5 max-w-xl mt-14 pt-8 border-t border-white/20"
+      >
+
+
+        <div>
+
+          <div
+            class="text-sm sm:text-base font-black uppercase tracking-widest"
+          >
+            LAUTECH
+          </div>
+
+          <div
+            class="text-xs text-neutral-400 uppercase tracking-widest mt-1"
+          >
+            University
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div
+            class="text-sm sm:text-base font-black uppercase tracking-widest"
+          >
+            Ogbomoso
+          </div>
+
+          <div
+            class="text-xs text-neutral-400 uppercase tracking-widest mt-1"
+          >
+            Oyo State
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div
+            class="text-sm sm:text-base font-black uppercase tracking-widest"
+          >
+            Table Tennis
+          </div>
+
+          <div
+            class="text-xs text-neutral-400 uppercase tracking-widest mt-1"
+          >
+            The Game
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- ========================================================= -->
+<!-- INTRODUCTION -->
+<!-- ========================================================= -->
+
+<section
+  id="about"
+  class="py-28 bg-black"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+
+    <div
+      class="grid lg:grid-cols-2 gap-14 items-center"
+    >
+
+
+      <!-- HEADING -->
+
+      <div class="reveal">
+
+        <div
+          class="text-red-500 text-sm font-black uppercase tracking-widest mb-4"
+        >
+
+          LAUTECH SMASHERS
+
+        </div>
+
+
+        <h2
+          class="text-5xl md:text-6xl black-italic"
+        >
+
+          More Than
+
+          <span class="text-red-600">
+            A Game.
+          </span>
+
+        </h2>
+
+
+        <div class="red-line mt-7"></div>
+
+      </div>
+
+
+      <!-- TEXT -->
+
+      <div class="reveal">
+
+        <p
+          class="text-neutral-300 text-lg leading-relaxed"
+        >
+
+          LAUTECH Smashers is the table tennis identity of
+          Ladoke Akintola University of Technology, Ogbomoso.
+
+        </p>
+
+
+        <p
+          class="text-neutral-400 text-lg leading-relaxed mt-6"
+        >
+
+          This website brings the team, its activities and its
+          journey together in one place.
+
+        </p>
+
+
+        <a
+          href="about.html"
+          class="inline-block text-red-500 font-bold mt-7"
+        >
+
+          Discover LAUTECH Smashers →
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- EXPLORE -->
+<!-- ========================================================= -->
+
+<section
+  class="py-28 bg-[#080808]"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+
+
+    <!-- SECTION HEADING -->
+
+    <div
+      class="max-w-3xl mb-14 reveal"
+    >
+
+      <div
+        class="text-red-500 text-sm font-black uppercase tracking-widest mb-4"
+      >
+
+        Explore
+
+      </div>
+
+
+      <h2
+        class="text-5xl md:text-6xl black-italic"
+      >
+
+        Inside The
+
+        <span class="text-neutral-600">
+          Smashers.
+        </span>
+
+      </h2>
+
+
+      <div class="red-line mt-7"></div>
+
+
+      <p
+        class="text-neutral-400 text-lg leading-relaxed mt-7"
+      >
+
+        Explore the different parts of the LAUTECH Smashers
+        website.
+
+      </p>
+
+    </div>
+
+
+
+    <!-- CARDS -->
+
+    <div
+      class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"
+    >
+
+
+      <!-- ABOUT -->
+
+      <a
+        href="about.html"
+        class="explore-card p-7 reveal"
+      >
+
+        <div>
+
+          <div class="explore-card-number">
+            01
+          </div>
+
+          <h3
+            class="text-3xl font-black uppercase mt-8"
+          >
+            About
+          </h3>
+
+          <p
+            class="text-neutral-500 mt-4 leading-relaxed"
+          >
+            Learn about LAUTECH Smashers and its identity.
+
+          </p>
+
+        </div>
+
+        <div
+          class="text-red-500 font-black mt-10"
+        >
+          Explore →
+        </div>
+
+      </a>
+
+
+
+      <!-- PLAYERS -->
+
+      <a
+        href="players.html"
+        class="explore-card p-7 reveal"
+      >
+
+        <div>
+
+          <div class="explore-card-number">
+            02
+          </div>
+
+          <h3
+            class="text-3xl font-black uppercase mt-8"
+          >
+            Players
+          </h3>
+
+          <p
+            class="text-neutral-500 mt-4 leading-relaxed"
+          >
+            Meet the players representing the Smashers.
+
+          </p>
+
+        </div>
+
+        <div
+          class="text-red-500 font-black mt-10"
+        >
+          Meet The Players →
+
+        </div>
+
+      </a>
+
+
+
+      <!-- FIXTURES -->
+
+      <a
+        href="fixtures.html"
+        class="explore-card p-7 reveal"
+      >
+
+        <div>
+
+          <div class="explore-card-number">
+            03
+          </div>
+
+          <h3
+            class="text-3xl font-black uppercase mt-8"
+          >
+            Fixtures
+          </h3>
+
+          <p
+            class="text-neutral-500 mt-4 leading-relaxed"
+          >
+            Follow upcoming matches and scheduled games.
+
+          </p>
+
+        </div>
+
+        <div
+          class="text-red-500 font-black mt-10"
+        >
+          View Fixtures →
+
+        </div>
+
+      </a>
+
+
+
+      <!-- RESULTS -->
+
+      <a
+        href="results.html"
+        class="explore-card p-7 reveal"
+      >
+
+        <div>
+
+          <div class="explore-card-number">
+            04
+          </div>
+
+          <h3
+            class="text-3xl font-black uppercase mt-8"
+          >
+            Results
+          </h3>
+
+          <p
+            class="text-neutral-500 mt-4 leading-relaxed"
+          >
+            View match results and performances.
+
+          </p>
+
+        </div>
+
+        <div
+          class="text-red-500 font-black mt-10"
+        >
+          View Results →
+
+        </div>
+
+      </a>
+
+
+
+      <!-- TOURNAMENTS -->
+
+      <a
+        href="tournaments.html"
+        class="explore-card p-7 reveal"
+      >
+
+        <div>
+
+          <div class="explore-card-number">
+            05
+          </div>
+
+          <h3
+            class="text-3xl font-black uppercase mt-8"
+          >
+            Tournaments
+          </h3>
+
+          <p
+            class="text-neutral-500 mt-4 leading-relaxed"
+          >
+            Discover competitions involving the team.
+
+          </p>
+
+        </div>
+
+        <div
+          class="text-red-500 font-black mt-10"
+        >
+          Explore Tournaments →
+
+        </div>
+
+      </a>
+
+
+
+      <!-- TRAINING -->
+
+      <a
+        href="training.html"
+        class="explore-card p-7 reveal"
+      >
+
+        <div>
+
+          <div class="explore-card-number">
+            06
+          </div>
+
+          <h3
+            class="text-3xl font-black uppercase mt-8"
+          >
+            Training
+          </h3>
+
+          <p
+            class="text-neutral-500 mt-4 leading-relaxed"
+          >
+            Find information about team training.
+
+          </p>
+
+        </div>
+
+        <div
+          class="text-red-500 font-black mt-10"
+        >
+          Training →
+
+        </div>
+
+      </a>
+
+
+
+      <!-- NEWS -->
+
+      <a
+        href="news.html"
+        class="explore-card p-7 reveal"
+      >
+
+        <div>
+
+          <div class="explore-card-number">
+            07
+          </div>
+
+          <h3
+            class="text-3xl font-black uppercase mt-8"
+          >
+            News
+          </h3>
+
+          <p
+            class="text-neutral-500 mt-4 leading-relaxed"
+          >
+            Follow the latest LAUTECH Smashers updates.
+
+          </p>
+
+        </div>
+
+        <div
+          class="text-red-500 font-black mt-10"
+        >
+          Latest News →
+
+        </div>
+
+      </a>
+
+
+
+      <!-- GALLERY -->
+
+      <a
+        href="gallery.html"
+        class="explore-card p-7 reveal"
+      >
+
+        <div>
+
+          <div class="explore-card-number">
+            08
+          </div>
+
+          <h3
+            class="text-3xl font-black uppercase mt-8"
+          >
+            Gallery
+          </h3>
+
+          <p
+            class="text-neutral-500 mt-4 leading-relaxed"
+          >
+            See moments from the Smashers.
+
+          </p>
+
+        </div>
+
+        <div
+          class="text-red-500 font-black mt-10"
+        >
+          View Gallery →
+
+        </div>
+
+      </a>
+
+
+
+      <!-- CONTACT -->
+
+      <a
+        href="contact.html"
+        class="explore-card p-7 reveal"
+      >
+
+        <div>
+
+          <div class="explore-card-number">
+            09
+          </div>
+
+          <h3
+            class="text-3xl font-black uppercase mt-8"
+          >
+            Contact
+          </h3>
+
+          <p
+            class="text-neutral-500 mt-4 leading-relaxed"
+          >
+            Get in touch with the LAUTECH Smashers.
+
+          </p>
+
+        </div>
+
+        <div
+          class="text-red-500 font-black mt-10"
+        >
+          Contact →
+
+        </div>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- IDENTITY -->
+<!-- ========================================================= -->
+
+<section
+  class="identity-bg section-image py-28"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+
+    <div
+      class="max-w-4xl reveal"
+    >
+
+      <div
+        class="text-red-500 text-sm font-black uppercase tracking-widest mb-4"
+      >
+
+        The Smashers
+
+      </div>
+
+
+      <h2
+        class="text-5xl md:text-7xl black-italic"
+      >
+
+        Play
+
+        <span class="text-red-600">
+          Together.
+        </span>
+
+        <br>
+
+        Compete Together.
+
+      </h2>
+
+
+      <p
+        class="text-neutral-300 text-lg max-w-2xl leading-relaxed mt-7"
+      >
+
+        A team built around competition, discipline,
+        teamwork and the love of table tennis.
+
+      </p>
+
+
+      <a
+        href="players.html"
+        class="inline-block red-button px-8 py-4 mt-9 font-black uppercase tracking-widest"
+      >
+
+        Meet The Players
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- TRAINING LOCATION -->
+<!-- ========================================================= -->
+
+<section
+  class="py-28 bg-black"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+
+    <div
+      class="grid lg:grid-cols-2 gap-14 items-center"
+    >
+
+
+      <div class="reveal">
+
+        <div
+          class="text-red-500 text-sm font-black uppercase tracking-widest mb-4"
+        >
+
+          Training
+
+        </div>
+
+
+        <h2
+          class="text-5xl md:text-6xl black-italic"
+        >
+
+          Where The
+
+          <span class="text-red-600">
+            Game
+          </span>
+
+          Happens.
+
+        </h2>
+
+
+        <div class="red-line mt-7"></div>
+
+      </div>
+
+
+
+      <div class="reveal">
+
+        <div class="card p-8">
+
+          <div
+            class="text-xs text-neutral-500 uppercase tracking-widest font-black"
+          >
+
+            Training Location
+
+          </div>
+
+
+          <h3
+            class="text-2xl font-black uppercase mt-3"
+          >
+
+            Indoor Sport Hall
+
+          </h3>
+
+
+          <p
+            class="text-neutral-400 mt-3 leading-relaxed"
+          >
+
+            Maracana, LAUTECH
+
+            <br>
+
+            Ogbomoso, Oyo State, Nigeria
+
+          </p>
+
+
+          <a
+            href="training.html"
+            class="inline-block text-red-500 font-bold mt-6"
+          >
+
+            Training Information →
+
+          </a>
+
+        </div>
+
+
+        <div class="card p-8 mt-5">
+
+          <div
+            class="text-xs text-neutral-500 uppercase tracking-widest font-black"
+          >
+
+            Team Coach
+
+          </div>
+
+
+          <h3
+            class="text-2xl font-black uppercase mt-3"
+          >
+
+            Omoariyo
+
+          </h3>
+
+
+          <p
+            class="text-neutral-400 mt-3"
+          >
+
+            LAUTECH Smashers
+
+          </p>
+
+
+          <a
+            href="contact.html"
+            class="inline-block text-red-500 font-bold mt-6"
+          >
+
+            Contact The Team →
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- CONTACT CTA -->
+<!-- ========================================================= -->
+
+<section
+  class="py-28 bg-[#080808]"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  >
+
+    <div
+      class="card p-8 md:p-14 reveal"
+    >
+
+      <div
+        class="grid lg:grid-cols-2 gap-12 items-center"
+      >
+
+
+        <div>
+
+          <div
+            class="text-red-500 text-sm font-black uppercase tracking-widest mb-4"
+          >
+
+            LAUTECH SMASHERS
+
+          </div>
+
+
+          <h2
+            class="text-5xl md:text-7xl black-italic"
+          >
+
+            Stay
+
+            <span class="text-red-600">
+              Connected.
+            </span>
+
+          </h2>
+
+
+          <p
+            class="text-neutral-400 text-lg leading-relaxed mt-7 max-w-xl"
+          >
+
+            For enquiries, team information or other questions,
+            get in touch with the LAUTECH Smashers.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="flex flex-wrap lg:justify-end gap-4">
+
+          <a
+            href="contact.html"
+            class="red-button px-7 py-4 font-black uppercase tracking-widest"
+          >
+
+            Contact Us
+
+          </a>
+
+
+          <a
+            href="gallery.html"
+            class="outline-button px-7 py-4 font-black uppercase tracking-widest"
+          >
+
+            View Gallery
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
+<footer
+  class="bg-black border-t border-neutral-800"
+>
+
+  <div
+    class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+  >
+
+    <div
+      class="grid md:grid-cols-3 gap-10"
+    >
+
+
+      <!-- BRAND -->
+
+      <div>
+
+        <img
+          src="assets/images/lautech-table-tennis-logo.png"
+          alt="LAUTECH Smashers"
+          class="h-14 w-auto max-w-[190px] object-contain"
+        >
+
+
+        <p
+          class="text-neutral-500 mt-5 max-w-sm"
+        >
+
+          LAUTECH Smashers — Table Tennis at
+          Ladoke Akintola University of Technology.
+
+        </p>
+
+      </div>
+
+
+
+      <!-- LINKS -->
+
+      <div>
+
+        <div
+          class="text-xs font-black uppercase tracking-widest text-red-500 mb-5"
+        >
+
+          Quick Links
+
+        </div>
+
+
+        <div
+          class="space-y-3 text-neutral-400"
+        >
+
+          <a
+            href="about.html"
+            class="block hover:text-white transition"
+          >
+            About
+          </a>
+
+          <a
+            href="players.html"
+            class="block hover:text-white transition"
+          >
+            Players
+          </a>
+
+          <a
+            href="fixtures.html"
+            class="block hover:text-white transition"
+          >
+            Fixtures
+          </a>
+
+          <a
+            href="results.html"
+            class="block hover:text-white transition"
+          >
+            Results
+          </a>
+
+          <a
+            href="tournaments.html"
+            class="block hover:text-white transition"
+          >
+            Tournaments
+          </a>
+
+          <a
+            href="training.html"
+            class="block hover:text-white transition"
+          >
+            Training
+          </a>
+
+          <a
+            href="gallery.html"
+            class="block hover:text-white transition"
+          >
+            Gallery
+          </a>
+
+          <a
+            href="contact.html"
+            class="block hover:text-white transition"
+          >
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- INFO -->
+
+      <div>
+
+        <div
+          class="text-xs font-black uppercase tracking-widest text-red-500 mb-5"
+        >
+
+          LAUTECH SMASHERS
+
+        </div>
+
+
+        <p class="text-neutral-400">
+          LAUTECH, Ogbomoso
+        </p>
+
+
+        <p class="text-neutral-500 mt-3">
+          Oyo State, Nigeria
+        </p>
+
+
+        <p class="text-neutral-500 mt-3">
+          Indoor Sport Hall, Maracana
+        </p>
+
+
+        <div class="mt-6">
+
+          <a
+            href="https://www.instagram.com/lautech_smashers?stkn=MWw1ZDh3ZzFrcGdrbQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-neutral-400 hover:text-white transition"
+          >
+
+            Instagram →
+
+          </a>
+
+        </div>
+
+
+        <div class="mt-3">
+
+          <a
+            href="https://vm.tiktok.com/ZS9A91NDXmF15-yi8RN/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-neutral-400 hover:text-white transition"
+          >
+
+            TikTok →
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- COPYRIGHT -->
+
+    <div
+      class="border-t border-neutral-800 mt-12 pt-7 flex flex-col sm:flex-row justify-between gap-4 text-sm text-neutral-600"
+    >
+
+      <div>
+
+        © <span id="year"></span>
+        LAUTECH Smashers.
+        All rights reserved.
+
+      </div>
+
+
+      <div>
+
+        Built For The Game.
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<!-- ========================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================================= -->
+
+<script>
+
+
+/* ========================================================= */
+/* MOBILE MENU */
+/* ========================================================= */
+
+function toggleMobileMenu(){
+
+  const menu =
+    document.getElementById("mobileMenu");
+
+  const button =
+    document.getElementById("menuButton");
+
+  menu.classList.toggle("open");
+
+  const isOpen =
+    menu.classList.contains("open");
+
+  button.setAttribute(
+    "aria-expanded",
+    isOpen ? "true" : "false"
+  );
+
+}
+
+
+function closeMobileMenu(){
+
+  const menu =
+    document.getElementById("mobileMenu");
+
+  const button =
+    document.getElementById("menuButton");
+
+  menu.classList.remove("open");
+
+  button.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+}
+
+
+/* ========================================================= */
+/* SCROLL REVEAL */
+/* ========================================================= */
+
+const revealObserver =
+  new IntersectionObserver(
+
+    (entries) => {
+
+      entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+
+          entry.target.classList.add("show");
+
+          revealObserver.unobserve(
+            entry.target
+          );
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold:0.12
+    }
+
+  );
+
+
+document
+  .querySelectorAll(".reveal")
+  .forEach((element) => {
+
+    revealObserver.observe(element);
+
+  });
+
+
+/* ========================================================= */
+/* YEAR */
+/* ========================================================= */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
+/* ========================================================= */
+/* CLOSE MOBILE MENU WHEN CLICKING OUTSIDE */
+/* ========================================================= */
+
+document.addEventListener(
+  "click",
+  function(event){
+
+    const menu =
+      document.getElementById("mobileMenu");
+
+    const button =
+      document.getElementById("menuButton");
+
+    if(
+
+      menu.classList.contains("open") &&
+
+      !menu.contains(event.target) &&
+
+      !button.contains(event.target)
+
+    ){
+
+      closeMobileMenu();
+
+    }
+
+  }
+);
+
+
+/* ========================================================= */
+/* CLOSE MOBILE MENU AFTER LINK CLICK */
+/* ========================================================= */
+
+document
+  .querySelectorAll("#mobileMenu a")
+  .forEach((link) => {
+
+    link.addEventListener(
+      "click",
+      closeMobileMenu
+    );
+
+  });
+
+
+</script>
+
+
+</body>
+</html>

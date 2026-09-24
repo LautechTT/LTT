@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Explore the LAUTECH Smashers gallery — match days, training sessions, competitions, and team moments.">
+<meta name="theme-color" content="#050505">
+
+<title>Gallery | LAUTECH Smashers</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --red:#dc2626;
+    --red-dark:#991b1b;
+    --gold:#d4a72c;
+    --black:#050505;
+    --dark:#0b0b0b;
+    --card:#111111;
+    --line:#292929;
+    --muted:#a1a1aa;
+    --white:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--black);
+    color:var(--white);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.display{
+    font-family:'Space Grotesk',sans-serif;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(5,5,5,.88);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:800;
+    letter-spacing:-.03em;
+}
+
+.logo img{
+    width:45px;
+    height:45px;
+    object-fit:contain;
+}
+
+.logo span{
+    font-size:17px;
+}
+
+.logo strong{
+    color:var(--red);
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.nav-links a{
+    font-size:13px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    color:#d4d4d8;
+    transition:.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    color:var(--red);
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:78vh;
+    padding-top:76px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    background:
+        linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.78) 48%,rgba(5,5,5,.42) 100%),
+        linear-gradient(180deg,rgba(5,5,5,.1),var(--black)),
+        url("assets/images/lautech-smashers-team.jpg") center/cover no-repeat;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    right:-150px;
+    bottom:-220px;
+    width:500px;
+    height:500px;
+    border:1px solid rgba(220,38,38,.18);
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:100px 0;
+}
+
+.eyebrow{
+    color:var(--red);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    max-width:850px;
+    font-size:clamp(58px,9vw,125px);
+    line-height:.86;
+    font-weight:900;
+    letter-spacing:-.065em;
+    text-transform:uppercase;
+    font-style:italic;
+}
+
+.hero h1 span{
+    color:var(--red);
+}
+
+.hero-copy{
+    max-width:620px;
+    margin-top:30px;
+    color:#d4d4d8;
+    line-height:1.8;
+    font-size:16px;
+}
+
+.hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:34px;
+}
+
+.meta{
+    border:1px solid var(--line);
+    background:rgba(0,0,0,.42);
+    padding:11px 15px;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    padding:110px 0 70px;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:end;
+}
+
+.section-label{
+    color:var(--red);
+    text-transform:uppercase;
+    letter-spacing:.15em;
+    font-size:12px;
+    font-weight:900;
+    margin-bottom:18px;
+}
+
+.intro h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(38px,5vw,70px);
+    line-height:.95;
+    letter-spacing:-.055em;
+    text-transform:uppercase;
+    font-weight:800;
+}
+
+.intro h2 em{
+    color:var(--red);
+    font-style:normal;
+}
+
+.intro p{
+    color:var(--muted);
+    line-height:1.85;
+    font-size:15px;
+}
+
+/* =========================
+   CATEGORY
+========================= */
+
+.gallery-section{
+    padding:75px 0;
+}
+
+.category-header{
+    display:flex;
+    align-items:end;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:30px;
+}
+
+.category-title{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(34px,5vw,58px);
+    line-height:1;
+    text-transform:uppercase;
+    letter-spacing:-.05em;
+    font-weight:800;
+    font-style:italic;
+}
+
+.category-number{
+    color:var(--red);
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.category-description{
+    color:var(--muted);
+    max-width:600px;
+    margin-top:12px;
+    line-height:1.7;
+    font-size:14px;
+}
+
+/* =========================
+   GALLERY GRID
+========================= */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.gallery-item{
+    position:relative;
+    height:260px;
+    overflow:hidden;
+    background:
+        linear-gradient(135deg,#171717,#080808);
+    border:1px solid var(--line);
+    cursor:pointer;
+}
+
+.gallery-item:nth-child(1),
+.gallery-item:nth-child(8){
+    grid-column:span 2;
+    height:360px;
+}
+
+.gallery-item::before{
+    content:"PHOTO";
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#444;
+    font-family:'Space Grotesk',sans-serif;
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+
+.gallery-item img{
+    position:relative;
+    z-index:2;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.06);
+}
+
+.gallery-overlay{
+    position:absolute;
+    z-index:3;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:45px 18px 18px;
+    background:linear-gradient(transparent,rgba(0,0,0,.9));
+    opacity:0;
+    transform:translateY(10px);
+    transition:.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.gallery-overlay span{
+    font-size:11px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:#fff;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.section-divider{
+    height:1px;
+    background:var(--line);
+    margin:10px 0;
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    background:rgba(0,0,0,.94);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox-image{
+    max-width:min(1100px,92vw);
+    max-height:82vh;
+    object-fit:contain;
+    border:1px solid #333;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next{
+    position:absolute;
+    border:1px solid #333;
+    background:rgba(10,10,10,.9);
+    color:white;
+    width:48px;
+    height:48px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    transition:.25s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover{
+    background:var(--red);
+    border-color:var(--red);
+}
+
+.lightbox-close{
+    top:25px;
+    right:25px;
+}
+
+.lightbox-prev{
+    left:25px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.lightbox-next{
+    right:25px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.lightbox-caption{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    color:#d4d4d8;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    margin-top:60px;
+    padding:100px 0;
+    background:
+        linear-gradient(90deg,rgba(220,38,38,.95),rgba(153,27,27,.9)),
+        url("assets/images/lautech-smashers-team.jpg") center/cover;
+}
+
+.cta-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:40px;
+}
+
+.cta h2{
+    font-family:'Space Grotesk',sans-serif;
+    font-size:clamp(42px,6vw,78px);
+    line-height:.9;
+    text-transform:uppercase;
+    letter-spacing:-.06em;
+    font-weight:900;
+    font-style:italic;
+}
+
+.cta p{
+    margin-top:15px;
+    max-width:550px;
+    line-height:1.7;
+}
+
+.cta-btn{
+    background:#050505;
+    color:#fff;
+    padding:16px 24px;
+    font-size:12px;
+    font-weight:900;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    white-space:nowrap;
+    transition:.25s ease;
+}
+
+.cta-btn:hover{
+    background:white;
+    color:#050505;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid var(--line);
+    padding:45px 0;
+    background:#030303;
+}
+
+.footer-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.footer-brand{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:800;
+    font-size:20px;
+}
+
+.footer-brand span{
+    color:var(--red);
+}
+
+.footer-copy{
+    color:#71717a;
+    font-size:12px;
+    margin-top:7px;
+}
+
+.socials{
+    display:flex;
+    gap:20px;
+}
+
+.socials a{
+    color:#a1a1aa;
+    font-size:12px;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+}
+
+.socials a:hover{
+    color:var(--red);
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:opacity .7s ease,transform .7s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:#080808;
+        border-bottom:1px solid var(--line);
+        padding:25px 5%;
+        display:none;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .intro-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .gallery-item{
+        height:220px;
+    }
+
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(8){
+        grid-column:span 2;
+        height:300px;
+    }
+
+    .cta-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        min-height:72vh;
+    }
+
+    .hero-content{
+        padding:80px 0;
+    }
+
+    .hero h1{
+        font-size:58px;
+    }
+
+    .intro{
+        padding:80px 0 40px;
+    }
+
+    .gallery-section{
+        padding:55px 0;
+    }
+
+    .category-header{
+        display:block;
+    }
+
+    .category-number{
+        margin-top:12px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+        gap:6px;
+    }
+
+    .gallery-item,
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(8){
+        height:190px;
+    }
+
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(8){
+        grid-column:span 2;
+    }
+
+    .lightbox{
+        padding:15px;
+    }
+
+    .lightbox-prev{
+        left:10px;
+    }
+
+    .lightbox-next{
+        right:10px;
+    }
+
+    .lightbox-close{
+        top:15px;
+        right:15px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+    <div class="container nav-inner">
+
+        <a href="index.html" class="logo">
+            <img src="assets/images/lautech-table-tennis-logo.png" alt="LAUTECH Smashers Logo">
+            <span>LAUTECH <strong>SMASHERS</strong></span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="players.html">Players</a>
+            <a href="fixtures.html">Fixtures</a>
+            <a href="results.html">Results</a>
+            <a href="tournaments.html">Tournaments</a>
+            <a href="training.html">Training</a>
+            <a href="news.html">News</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero">
+    <div class="container hero-content reveal">
+
+        <div class="eyebrow">LAUTECH SMASHERS / GALLERY</div>
+
+        <h1>
+            The Game.<br>
+            <span>The Moments.</span>
+        </h1>
+
+        <p class="hero-copy">
+            A visual collection of the moments that define LAUTECH Smashers —
+            from match days and training sessions to major competitions and
+            the moments we share as a team.
+        </p>
+
+        <div class="hero-meta">
+            <div class="meta">60 Moments</div>
+            <div class="meta">4 Categories</div>
+            <div class="meta">LAUTECH • OGBOMOSO</div>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- INTRO -->
+<section class="intro">
+    <div class="container intro-grid reveal">
+
+        <div>
+            <div class="section-label">Inside The Journey</div>
+
+            <h2>
+                Every point.<br>
+                Every <em>moment.</em>
+            </h2>
+        </div>
+
+        <div>
+            <p>
+                From the intensity of competition to the work behind every
+                performance, this gallery captures the journey of LAUTECH
+                Smashers on and off the table.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- MATCH DAY -->
+<section class="gallery-section">
+    <div class="container">
+
+        <div class="category-header reveal">
+            <div>
+                <div class="section-label">01 / Match Day</div>
+                <h2 class="category-title">Match Day</h2>
+                <p class="category-description">
+                    The moments when preparation meets competition.
+                </p>
+            </div>
+
+            <div class="category-number">15 Photos</div>
+        </div>
+
+        <div class="gallery-grid reveal" data-category="Match Day">
+
+            <!-- 15 MATCH DAY PHOTOS -->
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 01</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 02</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 03</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 04</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 05</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 06</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 07</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 08</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 09</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 10</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 11</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 12</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 13</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 14</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Match Day 15</span></div></div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<div class="container">
+    <div class="section-divider"></div>
+</div>
+
+
+<!-- TRAINING -->
+<section class="gallery-section">
+    <div class="container">
+
+        <div class="category-header reveal">
+            <div>
+                <div class="section-label">02 / Training</div>
+                <h2 class="category-title">Training</h2>
+                <p class="category-description">
+                    The work behind the performance. Practice, repetition,
+                    discipline, and improvement.
+                </p>
+            </div>
+
+            <div class="category-number">15 Photos</div>
+        </div>
+
+        <div class="gallery-grid reveal">
+
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 01</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 02</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 03</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 04</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 05</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 06</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 07</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 08</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 09</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 10</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 11</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 12</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 13</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 14</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Training 15</span></div></div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<div class="container">
+    <div class="section-divider"></div>
+</div>
+
+
+<!-- COMPETITION -->
+<section class="gallery-section">
+    <div class="container">
+
+        <div class="category-header reveal">
+            <div>
+                <div class="section-label">03 / Competition</div>
+                <h2 class="category-title">Competition</h2>
+                <p class="category-description">
+                    Tournament moments, university sporting events,
+                    and the occasions when LAUTECH Smashers compete.
+                </p>
+            </div>
+
+            <div class="category-number">15 Photos</div>
+        </div>
+
+        <div class="gallery-grid reveal">
+
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 01</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 02</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 03</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 04</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 05</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 06</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 07</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 08</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 09</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 10</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 11</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 12</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 13</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 14</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Competition 15</span></div></div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<div class="container">
+    <div class="section-divider"></div>
+</div>
+
+
+<!-- TEAM MOMENTS -->
+<section class="gallery-section">
+    <div class="container">
+
+        <div class="category-header reveal">
+            <div>
+                <div class="section-label">04 / Team Moments</div>
+                <h2 class="category-title">Team Moments</h2>
+                <p class="category-description">
+                    Beyond the table — the people, memories, and moments
+                    that make LAUTECH Smashers a team.
+                </p>
+            </div>
+
+            <div class="category-number">15 Photos</div>
+        </div>
+
+        <div class="gallery-grid reveal">
+
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 01</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 02</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 03</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 04</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 05</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 06</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 07</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 08</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 09</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 10</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 11</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 12</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 13</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 14</span></div></div>
+            <div class="gallery-item"><div class="gallery-overlay"><span>Team Moment 15</span></div></div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container cta-inner">
+
+        <div>
+            <h2>Follow<br>The Journey.</h2>
+            <p>
+                More moments, more matches, and more of the LAUTECH Smashers
+                journey on our social platforms.
+            </p>
+        </div>
+
+        <a class="cta-btn"
+           href="https://www.instagram.com/lautech_smashers?stkn=MWw1ZDh3ZzFrcGdrbQ=="
+           target="_blank"
+           rel="noopener">
+            Follow on Instagram →
+        </a>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="container footer-inner">
+
+        <div>
+            <div class="footer-brand">
+                LAUTECH <span>SMASHERS</span>
+            </div>
+
+            <div class="footer-copy">
+                © 2026 LAUTECH Smashers. Ladoke Akintola University of Technology.
+            </div>
+        </div>
+
+        <div class="socials">
+            <a href="https://www.instagram.com/lautech_smashers?stkn=MWw1ZDh3ZzFrcGdrbQ=="
+               target="_blank"
+               rel="noopener">
+                Instagram
+            </a>
+
+            <a href="https://vm.tiktok.com/ZS9A91NDXmF15-yi8RN/"
+               target="_blank"
+               rel="noopener">
+                TikTok
+            </a>
+        </div>
+
+    </div>
+</footer>
+
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+
+    <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous">‹</button>
+
+    <img class="lightbox-image" id="lightboxImage" src="" alt="Gallery image">
+
+    <button class="lightbox-next" id="lightboxNext" aria-label="Next">›</button>
+
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("open");
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+    });
+});
+
+
+/* =========================
+   REVEAL ANIMATION
+========================= */
+
+const revealObserver = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold:.12
+    }
+);
+
+document.querySelectorAll(".reveal").forEach(el => {
+    revealObserver.observe(el);
+});
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+/*
+   When your real photos are ready,
+   the JavaScript automatically detects
+   images placed inside .gallery-item.
+*/
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxCaption = document.getElementById("lightboxCaption");
+const closeBtn = document.getElementById("lightboxClose");
+const prevBtn = document.getElementById("lightboxPrev");
+const nextBtn = document.getElementById("lightboxNext");
+
+let galleryImages = [];
+let currentIndex = 0;
+
+function collectImages(){
+
+    galleryImages = [];
+
+    document.querySelectorAll(".gallery-item img").forEach((img) => {
+
+        galleryImages.push({
+            src: img.src,
+            alt: img.alt || "LAUTECH Smashers Gallery"
+        });
+
+    });
+}
+
+function openLightbox(index){
+
+    if(galleryImages.length === 0) return;
+
+    currentIndex = index;
+
+    lightboxImage.src = galleryImages[currentIndex].src;
+    lightboxImage.alt = galleryImages[currentIndex].alt;
+
+    lightboxCaption.textContent =
+        galleryImages[currentIndex].alt;
+
+    lightbox.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+function closeLightbox(){
+
+    lightbox.classList.remove("active");
+
+    document.body.style.overflow = "";
+
+    lightboxImage.src = "";
+}
+
+function showNext(){
+
+    if(galleryImages.length === 0) return;
+
+    currentIndex =
+        (currentIndex + 1) % galleryImages.length;
+
+    openLightbox(currentIndex);
+}
+
+function showPrevious(){
+
+    if(galleryImages.length === 0) return;
+
+    currentIndex =
+        (currentIndex - 1 + galleryImages.length)
+        % galleryImages.length;
+
+    openLightbox(currentIndex);
+}
+
+document.querySelectorAll(".gallery-item").forEach(item => {
+
+    item.addEventListener("click", () => {
+
+        const img = item.querySelector("img");
+
+        if(!img) return;
+
+        collectImages();
+
+        const index =
+            galleryImages.findIndex(image =>
+                image.src === img.src
+            );
+
+        openLightbox(index);
+
+    });
+
+});
+
+
+closeBtn.addEventListener("click", closeLightbox);
+nextBtn.addEventListener("click", showNext);
+prevBtn.addEventListener("click", showPrevious);
+
+lightbox.addEventListener("click", event => {
+
+    if(event.target === lightbox){
+        closeLightbox();
+    }
+
+});
+
+document.addEventListener("keydown", event => {
+
+    if(!lightbox.classList.contains("active")) return;
+
+    if(event.key === "Escape"){
+        closeLightbox();
+    }
+
+    if(event.key === "ArrowRight"){
+        showNext();
+    }
+
+    if(event.key === "ArrowLeft"){
+        showPrevious();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
